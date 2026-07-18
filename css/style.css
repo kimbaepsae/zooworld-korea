@@ -123,10 +123,288 @@ nav li:hover{color:#d5b56a}
   position:absolute;inset:0;
   display:flex;justify-content:center;align-items:center;
   background:rgba(10,20,15,.45);opacity:0;transition:.35s;
+<<<<<<< HEAD
 }
 .portfolio-item:hover .overlay{opacity:1}
 .overlay h3{color:#fff;font-size:34px;font-family:"Cormorant Garamond",serif}
 
+/* MODAL */
+.modal{
+  position:fixed;inset:0;background:rgba(0,0,0,.65);
+  display:flex;justify-content:center;align-items:center;
+  opacity:0;visibility:hidden;transition:.35s;z-index:9999;
+}
+.modal.active{opacity:1;visibility:visible}
+.modal-box{
+  width:520px;max-width:90%;background:#fff;
+  border-radius:14px;padding:45px;position:relative;
+  animation:popup .35s ease;
+}
+@keyframes popup{
+  from{transform:translateY(30px);opacity:0}
+  to{transform:translateY(0);opacity:1}
+}
+.close-btn{position:absolute;top:18px;right:22px;border:none;background:none;font-size:34px;cursor:pointer}
+.modal-box span{color:#C8A55D;letter-spacing:4px;font-size:13px;font-weight:600}
+.modal-box h2{
+  margin:12px 0 15px;font-size:42px;color:#163125;
+  font-family:"Cormorant Garamond","Noto Serif KR",serif;
+}
+.modal-box p{color:#666;margin-bottom:30px;line-height:1.7}
+.modal-box form{display:flex;flex-direction:column;gap:16px}
+.modal-box input,
+.modal-box textarea{width:100%;padding:16px;border:1px solid #ddd;border-radius:8px;font-size:15px;outline:none}
+.modal-box textarea{height:150px;resize:none}
+.send-btn{height:58px;border:none;background:#163125;color:#fff;border-radius:8px;font-size:16px;cursor:pointer;transition:.3s}
+.send-btn:hover{background:#24523f}
+
+/* ===========================
+   햄버거 메뉴 버튼 (모바일용)
+=========================== */
+.hamburger{
+  display:none;
+  flex-direction:column;
+  gap:5px;
+  cursor:pointer;
+  padding:4px;
+}
+.hamburger span{
+  display:block;width:24px;height:2px;
+  background:#fff;transition:.3s;
+}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+/* ===========================
+   TABLET (1024px 이하)
+=========================== */
+@media(max-width:1024px){
+  .about,.section-title,.service-grid,.portfolio-grid{
+    width:90%;max-width:100%;
+  }
+  .hero-content{left:60px;width:80%}
+  .hero-content h1{font-size:68px}
+=======
+>>>>>>> 6fa5203281cfe8f25e924e9dbe7ac1b02007bd5f
+}
+.portfolio-item:hover .overlay{opacity:1}
+.overlay h3{color:#fff;font-size:34px;font-family:"Cormorant Garamond",serif}
+
+<<<<<<< HEAD
+/* ===========================
+   MOBILE (768px 이하)
+=========================== */
+@media(max-width:768px){
+
+  /* NAV */
+  nav{padding:0 24px;height:70px}
+  nav ul{
+    display:none;
+    position:fixed;top:70px;left:0;width:100%;
+    flex-direction:column;gap:0;
+    background:rgba(10,15,15,.97);
+    backdrop-filter:blur(20px);
+    padding:16px 0;
+  }
+  nav ul.open{display:flex}
+  nav li{padding:14px 28px;font-size:14px;border-bottom:1px solid rgba(255,255,255,.06)}
+  nav li:last-child{border-bottom:none}
+  .btn{display:none}
+  .hamburger{display:flex}
+
+  /* HERO */
+  .hero{min-height:100svh}
+  .hero::before{
+    background:
+      linear-gradient(180deg,rgba(7,10,10,.85) 0%,rgba(7,10,10,.6) 100%),
+      url("../images/hero.png") center/cover no-repeat;
+  }
+  .hero-content{
+    left:0;top:50%;
+    width:100%;padding:0 24px;
+  }
+  .hero-content p:first-child{font-size:13px;letter-spacing:4px;margin-bottom:16px}
+  .hero-content h1{font-size:42px;letter-spacing:-1px;margin-bottom:20px}
+  .hero-content h2{font-size:15px;margin-bottom:36px}
+  .buttons{flex-direction:column;gap:12px}
+  .primary,.secondary{width:100%;height:54px;font-size:15px}
+
+  /* STATS */
+  .stats{grid-template-columns:repeat(3,1fr)}
+  .stat:nth-child(4){border-top:1px solid rgba(255,255,255,.08)}
+  .stat:nth-child(5){border-top:1px solid rgba(255,255,255,.08)}
+  .stat h2{font-size:22px}
+  .stat p{font-size:10px}
+
+  /* ABOUT */
+  .about{
+    grid-template-columns:1fr;
+    gap:40px;margin:72px auto;
+    width:90%;padding:0;
+  }
+  .about-image img{height:280px}
+  .about-text h2{font-size:36px}
+  .about-text p{font-size:15px}
+
+  /* SERVICES */
+  .services{padding:72px 0}
+  .section-title{width:90%}
+  .section-title h2{font-size:36px}
+  .service-grid{
+    width:90%;
+    grid-template-columns:1fr;
+    gap:16px;
+  }
+  .service-card{padding:28px}
+  .service-card h3{font-size:22px}
+
+  /* PORTFOLIO */
+  .portfolio{padding:72px 0}
+  .portfolio-grid{
+    width:90%;
+    grid-template-columns:1fr;
+    gap:16px;
+  }
+  .portfolio-item img{height:200px}
+  .overlay{opacity:1;background:rgba(10,20,15,.35)}
+  .overlay h3{font-size:24px}
+
+  /* MODAL */
+  .modal-box{padding:32px 24px;border-radius:12px}
+  .modal-box h2{font-size:32px}
+}
+
+/* ===========================
+   SMALL MOBILE (480px 이하)
+=========================== */
+@media(max-width:480px){
+  .hero-content h1{font-size:34px}
+  .stats{grid-template-columns:1fr 1fr}
+  .stat:nth-child(5){
+    grid-column:1/-1;
+    border-top:1px solid rgba(255,255,255,.08);
+    border-right:none;
+  }
+}
+/* ===========================
+   SERVICE ICON
+=========================== */
+.service-icon{font-size:36px;margin-bottom:20px}
+
+/* ===========================
+   PROCESS
+=========================== */
+.process{background:#163125;padding:120px 0}
+.process .section-title{width:1200px;margin:0 auto 70px}
+.process .section-title span{color:#c8a55d}
+.process .section-title h2{color:#fff}
+.process-grid{
+  width:1200px;margin:0 auto;
+  display:grid;grid-template-columns:repeat(4,1fr);
+  gap:0;border:1px solid rgba(255,255,255,.1);
+}
+.process-item{
+  padding:48px 36px;
+  border-right:1px solid rgba(255,255,255,.1);
+  transition:.3s;
+}
+.process-item:last-child{border-right:none}
+.process-item:hover{background:rgba(255,255,255,.04)}
+.process-num{
+  font-family:"Cormorant Garamond",serif;
+  font-size:52px;color:#c8a55d;opacity:.4;
+  line-height:1;margin-bottom:24px;font-style:italic;
+}
+.process-item h3{
+  font-family:"Cormorant Garamond","Noto Serif KR",serif;
+  font-size:22px;color:#fff;margin-bottom:14px;
+}
+.process-item p{font-size:14px;color:rgba(255,255,255,.55);line-height:1.8}
+
+/* ===========================
+   FOOTER
+=========================== */
+.footer{background:#0d1a14;padding:80px 0 0}
+.footer-inner{
+  width:1200px;margin:0 auto;
+  display:grid;grid-template-columns:2fr 1fr 1fr 1fr;
+  gap:60px;padding-bottom:60px;
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+.footer-brand h3{
+  font-family:"Cormorant Garamond",serif;
+  font-size:26px;color:#fff;font-weight:700;margin-bottom:6px;
+}
+.footer-brand span{color:#c8a55d;font-size:11px;letter-spacing:4px;font-weight:600}
+.footer-brand p{margin-top:20px;font-size:14px;color:rgba(255,255,255,.4);line-height:1.9}
+.footer-label{
+  font-size:11px;letter-spacing:3px;font-weight:600;
+  color:#c8a55d;margin-bottom:20px;
+}
+.footer-links a{
+  display:block;font-size:14px;
+  color:rgba(255,255,255,.5);margin-bottom:12px;
+  transition:.2s;
+}
+.footer-links a:hover{color:#fff}
+.footer-contact p{font-size:14px;color:rgba(255,255,255,.5);margin-bottom:12px;line-height:1.6}
+.footer-bottom{
+  width:1200px;margin:0 auto;
+  display:flex;justify-content:space-between;align-items:center;
+  padding:24px 0;
+}
+.footer-bottom p{font-size:12px;color:rgba(255,255,255,.25)}
+
+/* ===========================
+   카카오 플로팅 버튼
+=========================== */
+.kakao-float{
+  position:fixed;bottom:32px;right:32px;z-index:990;
+  width:54px;height:54px;border-radius:50%;
+  background:#FEE500;color:#3C1E1E;
+  display:flex;justify-content:center;align-items:center;
+  box-shadow:0 4px 20px rgba(0,0,0,.2);
+  transition:.3s;
+}
+.kakao-float:hover{transform:translateY(-4px);box-shadow:0 8px 28px rgba(0,0,0,.25)}
+
+/* ===========================
+   SCROLL FADE-UP 애니메이션
+=========================== */
+.fade-up{
+  opacity:0;
+  transform:translateY(32px);
+  transition:opacity .6s ease, transform .6s ease;
+}
+.fade-up.visible{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* ===========================
+   PROCESS + FOOTER 모바일
+=========================== */
+@media(max-width:1024px){
+  .process .section-title,.process-grid,.footer-inner,.footer-bottom{width:90%}
+}
+@media(max-width:768px){
+  .process{padding:72px 0}
+  .process-grid{grid-template-columns:1fr 1fr}
+  .process-item{border-bottom:1px solid rgba(255,255,255,.1)}
+  .process-item:nth-child(2n){border-right:none}
+  .process-item:nth-last-child(-n+2){border-bottom:none}
+  .footer-inner{grid-template-columns:1fr 1fr;gap:40px}
+  .footer-bottom{flex-direction:column;gap:8px;text-align:center}
+  .kakao-float{width:48px;height:48px;bottom:24px;right:20px}
+}
+@media(max-width:480px){
+  .process-grid{grid-template-columns:1fr}
+  .process-item{border-right:none;border-bottom:1px solid rgba(255,255,255,.1)}
+  .process-item:last-child{border-bottom:none}
+  .footer-inner{grid-template-columns:1fr}
+}
+=======
 /* MODAL */
 .modal{
   position:fixed;inset:0;background:rgba(0,0,0,.65);
@@ -281,3 +559,4 @@ nav li:hover{color:#d5b56a}
     border-right:none;
   }
 }
+>>>>>>> 6fa5203281cfe8f25e924e9dbe7ac1b02007bd5f

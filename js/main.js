@@ -30,7 +30,7 @@ document.getElementById("contactForm").addEventListener("submit", function(e) {
   btn.disabled = true;
   btn.textContent = "전송 중...";
 
-  emailjs.send("service_f9nukyg", "template_52iwlqu", {
+  emailjs.send("service_jmwya0o", "template_dezceyi", {
     name:    document.getElementById("name").value,
     email:   document.getElementById("email").value,
     phone:   document.getElementById("phone").value,
@@ -47,3 +47,15 @@ document.getElementById("contactForm").addEventListener("submit", function(e) {
     btn.textContent = "문의하기";
   });
 });
+
+// 스크롤 페이드업 애니메이션
+const fadeEls = document.querySelectorAll(".fade-up");
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((e, i) => {
+    if(e.isIntersecting){
+      setTimeout(() => e.target.classList.add("visible"), i * 100);
+      observer.unobserve(e.target);
+    }
+  });
+}, {threshold: 0.15});
+fadeEls.forEach(el => observer.observe(el));
